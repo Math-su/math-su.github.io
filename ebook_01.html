@@ -438,13 +438,18 @@ print 'It took ' + i + ' iterations to sort the deck.';
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-					<div id="sidebar"><div id="sidebar-include"></div></div>
-<script>
-  fetch('sidebar.html')
-    .then(response => response.text())
-    .then(html => { document.getElementById('sidebar-include').innerHTML = html; });
-</script>
+<!-- Sidebar -->
+			<div id="sidebar">
+				<div id="sidebar-include"></div>
+				<script>
+					fetch('sidebar.html')
+						.then(response => response.text())
+						.then(html => {
+							document.getElementById('sidebar-include').innerHTML = html;
+						});
+				</script>
+			</div>
+
 			</div>
 
 		<!-- Scripts -->
