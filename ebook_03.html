@@ -438,85 +438,20 @@ print 'It took ' + i + ' iterations to sort the deck.';
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+<!-- Sidebar -->
+<div id="sidebar"></div>
+<script>
+  fetch('sidebar.html')
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById('sidebar').innerHTML = html; // 直接塞進 #sidebar
 
-							<!-- Search -->
-								<!-- <section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section> -->
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">首頁</a></li>
-										<li><a href="generic.html">研究計劃</a></li>
-										<li><a href="elements.html">數學素養</a></li>
-										<li>
-											<span class="opener">數學教育</span>
-											<ul>
-												<li><a href="ebook_01.html">國中數學</a></li>
-												<li><a href="ebook_02.html">國小數學</a></li>
-												<li><a href="ebook_03.html">國中電子書</a></li>
-												<li><a href="ebook_04.html">國小電子書</a></li>
-											</ul>
-										</li>
-										<li><a href="#">科普專區</a></li>
-										<li><a href="aboutus.html">關於我們</a></li>
-									</ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>台北市立大學</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="https://math.utaipei.edu.tw/index.php" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>- 數據科學與數學系 - <br />培育數據科學分析及數學應用能力</p>
-										</article>
-										<article>
-											<a href="https://math.utaipei.edu.tw/p/412-1082-4.php?Lang=zh-tw" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>- 課程目標與特色 - <br />以數學為核心，培養數學基本概念，發展分析與綜合能力，奠定獨立研究數學之基礎 </p>
-										</article>
-										<article>
-											<a href="https://admission.utaipei.edu.tw/" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>數據科學與數學系招生訊息 </p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>與我們聯絡</h2>
-									</header>
-									<p>臺北市立大學數學系<br />含數據科學與數學教育碩士班<br /> math@go.uTaipei.edu.tw<br /></p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">yiwen@uTaipei.edu.tw</a></li>
-										<li class="icon solid fa-phone">(02)2311-3040轉1908</li>
-										<li class="icon solid fa-home">臺北市立大學（博愛校區）<br />
-											100234 臺北市中正區愛國西路一號</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
+      // 綁定可折疊功能
+      document.querySelectorAll('#menu .opener').forEach(opener => {
+        opener.addEventListener('click', () => opener.classList.toggle('active'));
+      });
+    });
+</script>
 
 			</div>
 
