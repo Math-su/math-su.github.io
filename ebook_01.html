@@ -439,17 +439,23 @@ print 'It took ' + i + ' iterations to sort the deck.';
 					</div>
 
 <!-- Sidebar -->
-			<div id="sidebar">
-				<div id="sidebar-include"></div>
-				<script>
-					fetch('sidebar.html')
-						.then(response => response.text())
-						.then(html => {
-							document.getElementById('sidebar-include').innerHTML = html;
-						});
-				</script>
-			</div>
+<div id="sidebar">
+	<div id="sidebar-include"></div>
+	<script>
+		fetch('sidebar.html')
+			.then(response => response.text())
+			.then(html => {
+				document.getElementById('sidebar-include').innerHTML = html;
 
+				// 折疊選單初始化（讓 .opener 可以點擊展開/收合）
+				document.querySelectorAll('#menu .opener').forEach(function (opener) {
+					opener.addEventListener('click', function () {
+						this.classList.toggle('active');
+					});
+				});
+			});
+	</script>
+</div>
 			</div>
 
 		<!-- Scripts -->
