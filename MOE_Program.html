@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>教育部計畫 - 臺北市立大學數學系 蘇意雯教授</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+
+  <body class="is-preload">
+    <div id="wrapper">
+      <div id="main">
+        <div class="inner">
+          <header id="header">
+            <a href="index.html" class="logo"><strong>臺北市立大學數學系 蘇意雯教授</strong></a>
+          </header>
+
+          <section>
+            <header class="main">
+              <h1>教育部計畫</h1>
+            </header>
+            <h2 id="content"></h2>
+               
+            <h3>教育部計畫</h3>
+            <table>
+              <thead>
+                <tr><th>年度</th><th>計畫</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>113年度</td>
+                  <td>教育部113年度教學實踐研究計畫補助：「從數學思維的發展到實作應用的跨域之旅」 (PMS1137374)</td>
+                </tr>
+                <tr>
+                  <td>112年度</td>
+                  <td>教育部112年度教學實踐研究計畫補助：「數學相關實作活動評分規準之發展研究」 (PMS1122646)</td>
+                </tr>
+                <tr>
+                  <td>111年度</td>
+                  <td>教育部111年度教學實踐研究計畫補助：「科技融入數學師資培育課程之實踐研究」 (PMS1110091)</td>
+                </tr>
+                <tr>
+                  <td>110年度</td>
+                  <td>教育部110年度教學實踐研究計畫補助：「從STEAM觀點下探討數學史與數學教育課程的實踐」 (PMS1100257)</td>
+                </tr>
+                <tr>
+                  <td>109年度</td>
+                  <td>教育部109年度教學實踐研究計畫補助：「跨領域數學通識課程的開發與實踐研究」 (PGE1090685)</td>
+                </tr>
+                <tr>
+                  <td>109年度</td>
+                  <td>教育部高中數學領域適性教學教材研發實驗計畫 — 協同主持人</td>
+                </tr>
+                <tr>
+                  <td>108年度</td>
+                  <td>教育部108年度教學實踐研究計畫補助：「從歷史脈絡中看數學發展:數學史課程的開發與實踐研究」</td>
+                </tr>
+                <tr>
+                  <td>107年度</td>
+                  <td>教育部107年度教學實踐研究計畫補助：「數學遊戲教學素材開發與實踐研究」</td>
+                </tr>
+                <tr>
+                  <td>106學年度第一學期</td>
+                  <td>教育部106學年度第一學期學術倫理課程發展計畫：「數學史」</td>
+                </tr>
+                <tr>
+                  <td>100學年度第二學期</td>
+                  <td>100學年度第二學期公民核心能力課程改進計畫補助：「數學社會學」</td>
+                </tr>
+                <tr>
+                  <td>100學年度第一學期</td>
+                  <td>100學年度第一學期公民核心能力課程改進計畫補助：「數學思維的發展與應用」</td>
+                </tr>
+                <tr>
+                  <td>991學期</td>
+                  <td>991學期教育部優質通識教育課程計畫補助：「數學思維的發展與應用」</td>
+                </tr>
+                <tr>
+                  <td>981學期</td>
+                  <td>981學期教育部優質通識教育課程計畫補助：「數學思維的發展與應用」</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </section>
+        </div>
+      </div>
+
+      <div id="sidebar"></div>
+      <script>
+        (async function () {
+          const html = await fetch('sidebar.html').then(r => r.text());
+          document.getElementById('sidebar').innerHTML = html;
+          const load = src => new Promise(res => { const s=document.createElement('script'); s.src=src; s.onload=res; document.body.appendChild(s); });
+          await load('assets/js/jquery.min.js');
+          await load('assets/js/browser.min.js');
+          await load('assets/js/breakpoints.min.js');
+          await load('assets/js/util.js');
+          await load('assets/js/main.js');
+        })();
+      </script>
+
+    </div>
+
+    </body>
+</html>
