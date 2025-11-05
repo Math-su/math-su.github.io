@@ -114,41 +114,26 @@
       </div>
 
       <!-- Sidebar -->
-      <div id="sidebar"></div>
+      
+<!-- Sidebar：先載入，再初始化 Editorial JS -->
+<div id="sidebar"></div>
+<script>
+  (async function () {
+    const html = await fetch('sidebar.html').then(r => r.text());
+    document.getElementById('sidebar').innerHTML = html;
+    const load = src => new Promise(res => { const s=document.createElement('script'); s.src=src; s.onload=res; document.body.appendChild(s); });
+    await load('assets/js/jquery.min.js');
+    await load('assets/js/browser.min.js');
+    await load('assets/js/breakpoints.min.js');
+    await load('assets/js/util.js');
+    await load('assets/js/main.js');
+    document.querySelectorAll('#menu .opener').forEach(opener => {
+      opener.addEventListener('click', () => opener.parentElement.classList.toggle('active'));
+    });
+  })();
+</script>
 
-      <script>
-        (async function () {
-          try {
-        const sidebarEl = document.getElementById('sidebar');
-        const resp = await fetch('sidebar.html');
-        if (!resp.ok) throw new Error('Failed to load sidebar.html: ' + resp.status);
-        sidebarEl.innerHTML = await resp.text();
-
-        const load = src => new Promise((resolve, reject) => {
-          if (document.querySelector('script[src="' + src + '"]')) return resolve();
-          const s = document.createElement('script');
-          s.src = src;
-          s.onload = resolve;
-          s.onerror = () => reject(new Error('Failed to load script: ' + src));
-          document.body.appendChild(s);
-        });
-
-        await load('assets/js/jquery.min.js');
-        await load('assets/js/browser.min.js');
-        await load('assets/js/breakpoints.min.js');
-        await load('assets/js/util.js');
-        await load('assets/js/main.js');
-
-        document.querySelectorAll('#menu .opener').forEach(opener => {
-          opener.addEventListener('click', () => opener.classList.toggle('active'));
-        });
-          } catch (err) {
-        console.error(err);
-          }
-        })();
-      </script>
-
-        </div> <!-- /#wrapper -->
+    </div>
 
         <!-- Scripts --></body>
 </html>
