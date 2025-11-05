@@ -115,23 +115,40 @@
 
       <!-- Sidebar -->
       <div id="sidebar"></div>
-      <script>
-        fetch("sidebar.html")
-          .then((r) => r.text())
-          .then((html) => {
-            document.getElementById("sidebar").innerHTML = html;
-            document.querySelectorAll("#menu .opener").forEach((opener) => {
-              opener.addEventListener("click", () => opener.classList.toggle("active"));
-            });
-          });
-      </script>
-    </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+      <script>
+        (async function () {
+          try {
+        const sidebarEl = document.getElementById('sidebar');
+        const resp = await fetch('sidebar.html');
+        if (!resp.ok) throw new Error('Failed to load sidebar.html: ' + resp.status);
+        sidebarEl.innerHTML = await resp.text();
+
+        const load = src => new Promise((resolve, reject) => {
+          if (document.querySelector('script[src="' + src + '"]')) return resolve();
+          const s = document.createElement('script');
+          s.src = src;
+          s.onload = resolve;
+          s.onerror = () => reject(new Error('Failed to load script: ' + src));
+          document.body.appendChild(s);
+        });
+
+        await load('assets/js/jquery.min.js');
+        await load('assets/js/browser.min.js');
+        await load('assets/js/breakpoints.min.js');
+        await load('assets/js/util.js');
+        await load('assets/js/main.js');
+
+        document.querySelectorAll('#menu .opener').forEach(opener => {
+          opener.addEventListener('click', () => opener.classList.toggle('active'));
+        });
+          } catch (err) {
+        console.error(err);
+          }
+        })();
+      </script>
+
+        </div> <!-- /#wrapper -->
+
+        <!-- Scripts -->
 </html>
