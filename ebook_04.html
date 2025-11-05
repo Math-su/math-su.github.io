@@ -126,13 +126,7 @@
     await load('assets/js/breakpoints.min.js');
     await load('assets/js/util.js');
     await load('assets/js/main.js');
-    document.querySelectorAll('#menu .opener').forEach(opener => {
-  opener.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    opener.classList.toggle('active');
-  });
-});
+
   })();
 </script>
 
