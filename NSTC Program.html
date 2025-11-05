@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>國科會計畫 - 臺北市立大學數學系 蘇意雯教授</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+
+  <body class="is-preload">
+    <div id="wrapper">
+      <div id="main">
+        <div class="inner">
+          <header id="header">
+            <a href="index.html" class="logo"><strong>臺北市立大學數學系 蘇意雯教授</strong></a>
+          </header>
+
+          <section>
+            <header class="main">
+              <h1>國科會計畫</h1>
+            </header>
+            <h2 id="content"></h2>
+               
+            <h3>114年度</h3>
+            <table>
+                <tr><td>• 國中數學教師使用教科書中數學史內容之分析研究，國科會。 (NSTC 114-2410-H-845 -003 -MY2)</td></tr>
+            </table>
+
+            <h3>113年度</h3>
+            <table>
+                <tr><td>• 以教學人類學觀點進行中小學數學史學習工作單之編製及實驗研究，國科會。 (NSTC 113-2410-H-845-009 -)</td></tr>
+            </table>
+
+            <h3>111年度</h3>
+            <table>
+                <tr><td>• 經由探討日本數學文化開發大學數學史素材之研究，科技部。 (MOST 111-2410-H-845-009 -)</td></tr>
+            </table>
+
+            <h3>109年度</h3>
+            <table>
+                <tr><td>• 中小學數學史數位閱讀文本開發研究，科技部。(MOST 109-2511-H-845-002 -)</td></tr>
+            </table>
+
+            <h3>108年度</h3>
+            <table>
+                <tr><td>• 國小數學史電子繪本開發與實作之研究，科技部。</td></tr>
+            </table>
+
+            <h3>105-107年度</h3>
+            <table>
+                <tr><td>• 數學文化融入十二年國教數學課程－子計畫三：數學史素養素材之開發與探究，科技部。</td></tr>
+                <tr><td>• 數學建模與創客協奏曲(成功高中)－子計畫三：跨科教學的師資培育及課程評鑑研究(1-3/3)，科技部。</td></tr>
+            </table>
+
+            <h3>104年度</h3>
+            <table>
+                <tr><td>• 國小數學文化素材開發與實作研究，科技部。</td></tr>
+                <tr><td>• 單一整合型－數學閱讀課程資源精緻化暨應用推廣計畫(2/2)，科技部。</td></tr>
+            </table>
+
+            <h3>103年度</h3>
+            <table>
+                <tr><td>• 營造數學感之研究:提升中、小學中、低學習成就學生數學閱讀學習成效，科技部。</td></tr>
+                <tr><td>• 單一整合型－數學閱讀課程資源精緻化暨應用推廣計畫(1/2)，科技部。</td></tr>
+            </table>
+
+            <h3>102年度</h3>
+            <table>
+                <tr><td>• 幾何文本閱讀理解的任務設計與教學實作，國科會。</td></tr>
+                <tr><td>• 單一整合型計畫－高中職「數學閱讀領域探究式課程」研發計畫(3/3)，國科會。</td></tr>
+            </table>
+
+            <h3>99-101年度</h3>
+            <table>
+                <tr><td>• 以數學史動畫設計引動教師專業成長之研究，國科會。</td></tr>
+                <tr><td>• 單一整合型計畫:數學閱讀融入數學教學活動之實作與研究(1-2/3)，國科會。</td></tr>
+            </table>
+
+          </section>
+        </div>
+      </div>
+
+      <div id="sidebar"></div>
+      <script>
+        (async function () {
+          const html = await fetch('sidebar.html').then(r => r.text());
+          document.getElementById('sidebar').innerHTML = html;
+          const load = src => new Promise(res => { const s=document.createElement('script'); s.src=src; s.onload=res; document.body.appendChild(s); });
+          await load('assets/js/jquery.min.js');
+          await load('assets/js/browser.min.js');
+          await load('assets/js/breakpoints.min.js');
+          await load('assets/js/util.js');
+          await load('assets/js/main.js');
+        })();
+      </script>
+
+    </div>
+
+    </body>
+</html>
